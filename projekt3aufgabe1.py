@@ -10,10 +10,11 @@ def main(k, stop, radius):
 	cur = conn.cursor()
 	cur.execute("SELECT time, favorite_count, hashtagid FROM tweets, enthalten WHERE tweetid = tweets.id")
 	data = []
-	while cur.fetchone() != None:
-		tupel = cur.fetchone()
+	tupel = cur.fetchone()
+	while tupel != None:
 		tupel_als_liste = list(tupel)
 		data.append(tupel_als_liste)
+		tupel = cur.fetchone()
 	#print(data)
 	clusters = k_means(data, k, stop)
 	clusterpoints = clusters[0]
@@ -172,6 +173,4 @@ def find_hashtags(clusters, clusterpoints, radius, zeit0):
 
 if __name__ == "__main__":
 	main(200, 0, 3000)
-			
-
 
