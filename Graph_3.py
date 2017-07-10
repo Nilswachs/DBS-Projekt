@@ -1,4 +1,3 @@
-import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import datetime
@@ -32,8 +31,8 @@ for i in range (0, len(datearr)):
 days = days[::-1]
 count = count[::-1]
 
-x_pos = np.arange(len(days))
 
+date = []
 for i in days:
 	date.append(datetime.datetime.strptime(i,"%Y%m%d"))
 
