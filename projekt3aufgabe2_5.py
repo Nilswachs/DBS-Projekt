@@ -1,4 +1,4 @@
-from Tkinter import *
+rom Tkinter import *
 import psycopg2
 import ttk
 import datetime
@@ -17,7 +17,7 @@ while tupel != None:
 	data += tupel
 	tupel = cur.fetchone()
 
-data.sort()
+data.sort() # data = sortierte Liste mit den Namen aller Hashtags
 
 min_datum = datetime.datetime(2016, 1, 5,0,0,0)
 max_datum = datetime.datetime(2016, 9, 28,0,0,0)
@@ -25,6 +25,11 @@ max_datum = datetime.datetime(2016, 9, 28,0,0,0)
 anzahl_tage = max_datum - min_datum
 
 def zaehle_hashtags(hashtag):
+	"""
+	Eingabe:
+	hashtag -> der Name des gewaehlten hashtags
+	Ausgabe: Liste tage mit den Vorkommen des Hashtags pro Tag
+	"""
 	tage = []
 	for i in range(0, anzahl_tage.days):
 		tage.append(0)
