@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <title>Graph 2</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+    }
+    #container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+
+  <script src="/home/nils/sigma.js/build/sigma.min.js"></script>
+  <script src="/home/nils/sigma.js/plugins/sigma.plugins.dragNodes/sigma.plugins.dragNodes.js"></script>
+  <script>
+var s = new sigma('container');
+
+
+var hashtag = ["#nationalvoterregistrationday","#voterregistrationday","#makeamericagreatagain",
+"#maga","#imwithyou","#lovetrumpshate",
+"#strongertogether","#debates2016","#shewon","#iregistered","#americafirst","#trumpwon","#1","#debatenight"
+,"#imwithher","#benghazi","#isis","#debate","#tpp","#trumppence16","#polls","#slipping","#trumptrain","#declareyourambition"
+,"#opioidawarenessweek","#ada","#cripthevote","#terencecrutcher","#unga","#thedonald's","#jimmyfallon","#thetonightshow"
+,"#myteacherisweird","#fallontonight","#hispanicheritagemonth","#lesm","#librarianofcongress","#wetrumphate","#election2016"
+,"#potus","#commanderinchiefforum","#nbcnewsforum","#media","#votetrump","#laborday","#alconvention2016","#trumpineverett"
+,"#obamacare","#rip","#juangabriel","#divodejuarez","#goodtrouble","#trumppence2016","#neverhillary","#blackmenforbernie"
+,"#hillary2016","#blacksfortrump","#enjoy","#womensequalityday","#crookedhillary","#flashbackfriday","#nps100"
+,"#crookedhillary's","#brexit","#hannity","#buildthewall","#makeamericasafeagain","#diwali","#blackwomensequalpay"
+,"#laflood","#smallbiz","#teamtrump","#alwaystrump","#standwithlouisiana","#whereshillary","#whd","#rosanelleaton"
+,"#lawandorder","#daca","#extremevetting","#usa","#youthday","#tbt","#electionday","#2a","#defendthesecond","#scotus"
+,"#taxplan","#nevertrump","#icymi","#purpleheartday","#imwithhernandez","#virwinia","#senddonaldtospace","#demconvention"
+,"#restorethevra","#ugpride2016","#teamusa","#openingceremony","#rio2016","#nabjnahj16","#coastguardday","#trumpmovement"
+,"#voterfraud","#msm","#khizrkhan","#trump2016","#demsinphilly","#dnc","#nato","#stopgunviolence","#enough","#lgbt"
+,"#pulse","#dncinphl","#demsinphl","#wemadehistory","#rollcallvote","#rncincle","#hillarykaine2016","#clintonkaine"
+,"#rncwithbernie","#trumpiswithyou","#standtogether","#trumpyourself","#gopincle","#gopconvention","#citizensunited"
+,"#rncincle's","#aidsfreegeneration","#60minutes","#campaignfinance","#turkey","#mikepence","#juntossepuede","#irandeal"
+,"#fixdemocracyfirst","#feelthebern","#naacp107","#work","#orlando","#stopthehate","#neverforget","#srebrenica","#wimbledon"
+,"#philandocastile","#frozen","#firstinpotus","#riggedsystem","#leadright2016","#wcs16","#makersandtakers","#wakeupamerica"
+,"#creatorsaskhrc","#upupup","#trump","#turnuptovote","#ohhillyes","#dtmag","#usmc2016","#nycpride","#demplatform","#westvirginia"
+,"#brexitvote","#democraticsitin","#titleix","#clinton","#nobillnobreak","#gunviolence","#sitin","#aslongasittakes","#nomoresilence"
+,"#disarmhate","#endgunviolence","#notonemore","#holdthefloor","#olmstead","#gibill","#veterans","#moreincommon","#worldrefugeeday"
+,"#laudatosi","#charleston9","#trumpdallas","#sheswithus","#orlandounited","#filibuster","#armybday","#netneutrality"
+,"#stanleycup","#rtm2016","#wibackher","#historymade","#caprimary","#dday","#decision2016","#elkhart","#votetrump2016"
+,"#women4ttump","#saveelephants","#teachers4trump","#ca4trump","#neverdems","#caribbean","#understandslavery","#memorialday"
+,"#mdw","#meetthetrumps","#sallyrideday","#uaw","#actonclimate","#armedforcesday","#michaelbrown","#mothersofthemovement"
+,"#changeagents","#secondamendment","#sayhername","#megynkellypresents","#orprimary","#madeinamerica","#internationalnursesday"
+,"#washingtondc","#statehood","#repmikekelly","#nebraskaprimary","#trumpforpresident","#mattschlapp","#jenniferrubin"
+,"#gop","#mothersday","#madeforhistory","#kentuckyderby","#cincodemayo","#smallbizweek","#thanksobama","#teacherappreciationday"
+,"#inprimary","#apahm","#whcd","#fns","#mayday","#womancard","#hillaryoncnn","#indprimary","#indiana","#estoyconella"
+,"#msnbctownhall","#ctprimary","#deprimary","#mdprimary","#paprimary","#riprimary","#nyprimary","#earthday","#prince"
+,"#hillaryclinton","#hillaryongma","#trump360","#primaryday","#newyorkvalues","#votetrumpny","#votetrumpnyhttpst","#ivoted"
+,"#fightforfamilies","#eastvillage","#lssc","#houstonflood","#hrc4pa","#presidenttrump","#primary","#haileypuckett","#","#newday"
+,"#wiprimary","#wisconsin","#donaldtrump","#votetrumpwi","#racine","#wausau","#eauclaire","#johnryder","#'s","#women4trump"
+,"#derp","#lyingted","#nevercruz","#westerntuesday","#utahcaucus","#utcaucus","#arizonaprimary","#azprimary","#americansamoa"
+,"#brussels","#arizona","#aipac2016","#wattersworld","#trumpcountry","#utah","#mormon","#utahprimary","#utah4trump"
+,"#az","#ut","#supertuesday","#cnn","#go","#endcommoncore","#gopdebate","#donald","#lightweightsenatormarcorubio","#trumpwaikiki","#mahalo"
+,"#mediafraud","#msprimary","#trumpdog","#supersaturday","#littlemarco","#kansascaucus","#caucusfortrump","#votetrumpmi"
+,"#morningjoe","#kenlangone","#neilcavuto","#fox","#ontherecord","#fail","#politician","#nascar","#robotrubio","#stopcommoncore"
+,"#rogerstone","#greta","#lonestarstate","#makeyoutubegreatagain","#noloyalty","#nvcaucus","#votetrumpnv","#nevadacaucus","#trumplv"
+,"#trumpnv","#votetrumpvt","#votetrumpnc","#votetrumpma","#votetrumpil","#bikersfortrump","#scprimary","#watch"
+,"#fairandbalancedmyass","#ted","#southcarolina","#votetrumpsc","#vaticanwalls","#colbert","#maitnerstrong","#ford","#carrier"
+,"#jobs","#mexico","#southcarolinaprimary","#fitn","#nhprimary","#votetrumpnh","#commoncore","#superbowlsunday","#sb50"
+,"#gplfers","#trumpsupporters","#newhampshire","#nhpolitics","#votersspeak","#cruzfraud","#iacaucus","#thankavet","#trump4vets"
+,"#michaelmoore","#foxnews","#rogerailes","#iowa","#yuge","#iowacaucus","#newyork","#jonas","#wearebernie","#wewanttrump"
+,"#withcruzyoulose","#americagreatagain","#excellent","#rnc","#marybrigidmcmanamon","#commonlaw","#naturalborn","#tedcruz","#cruz"
+,"#laurencetribe","#economy","#cbnnews","#2016","#harveypitt","#iapolitics","#sotu","#goldenglobe","#laurence","#rubio"
+,"#bush","#davidcameron","#wh'","#trump4president"];
+// Liste aller von uns gefundenen Hashtags
+var index =[8,14,107,275,11,4,3,20,44,297,298,299,300,301,121,93,360,346,351,5,278,279,280,274,23,288,289,111,112,108,114,115,72,237,304,89,372,383,384,156,385,291,15];
+// Liste von Indizes aller Hashtags, die in unserer Aenlichkeitsrelation auftauchen -> k-means Algorithmus
+var array = [[8, 14], [107, 275], [14, 11, 4], [3, 20], [3, 44], [297, 298, 299, 300, 301], [121, 93], [44, 360], [346, 351, 3], [11, 4, 5], [14, 8], [278, 279, 280, 107, 274, 23], [14, 8], [288, 289, 3, 107], [111, 112, 108, 114, 115], [72, 351], [237, 107, 44], [44, 107, 3, 304], [3, 107, 23], [89, 3], [360, 372, 3, 107], [14, 8], [383, 384, 3, 156, 385, 107], [44, 291, 3, 107], [44, 372, 360, 107], [15, 14, 4]];
+// Indizes der Gruppen die durch unseren k-means Algorithmus gefunen wurden
+
+for (i = 0; i < index.length; i++){
+  s.graph.addNode({
+    id: 'n' + index[i],
+    label: hashtag[index[i]-1],
+    x: Math.random(),
+    y: Math.random(),
+    size: 1,
+    color: '#666'
+  });
+};
+// Erstellt alle benötigten Knoten
+
+
+for (i = 0; i < array.length; i++){
+	for (j = 0; j < array[i].length -1; j++){
+		for(k = j + 1; k < array[i].length; k++){
+ 			 s.graph.addEdge({
+   				 id: 'e' + i*100 +j*10 + k*1,
+  				 source: 'n' + array[i][j],
+   				 target: 'n' + array[i][k],
+   				 size: 1,
+   				 color: '#ccc'
+			});
+		};
+	};
+};
+// Erstellt die zugehörigen Kanten
+
+ s.refresh();
+
+// DragNodes plugin:
+var dragListener = sigma.plugins.dragNodes(s, s.renderers[0]);
+
+dragListener.bind('startdrag', function(event) {
+  console.log(event);
+});
+dragListener.bind('drag', function(event) {
+  console.log(event);
+});
+dragListener.bind('drop', function(event) {
+  console.log(event);
+});
+dragListener.bind('dragend', function(event) {
+  console.log(event);
+});
+
+
+  </script>
+</body>
+</html>
