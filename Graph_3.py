@@ -3,19 +3,18 @@ import matplotlib.dates as mdates
 import datetime
 
 
-
-
-
 datearr = []
 text = open("/home/nils/Uni/DBS/Timestamps","r")
 for line in text.readlines():
-	datearr.append((line[0]+line[1]+line[2]+line[3]+line[5]+line[6]+line[8]+line[9]))
+	datearr.append(line[0]+line[1]+line[2]+line[3]+line[5]+line[6]+line[8]+line[9])
+
+
 
 days = []
 for i in range (0, len(datearr)-1):
 	if(datearr[i] != datearr[i+1]):
 			days.append(datearr[i]) 
-if(datearr[len(datearr)-2] != datearr[len(datearr)-1]):
+if(datearr[len(datearr)-1] not in days):
 	days.append(datearr[len(datearr)-1])
 
 count = []
@@ -24,12 +23,10 @@ for i in range (0, len(days)):
 k = 0
 for i in range (0, len(datearr)):
 	if(days[k] == datearr[i]):
-		count[k] += 1
+		count[k] = count[k] + 1
 	else:
-		k += 1
+		k = k + 1
 
-days = days[::-1]
-count = count[::-1]
 
 
 date = []
@@ -49,6 +46,9 @@ ax.set_ylabel('Count')
 ax.set_xlabel('Date')
 
 plt.show()
+
+
+
 
 
 
